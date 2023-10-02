@@ -42,7 +42,8 @@ function Filter({ filterField, options }) {
 
   function handleClick(value) {
     searchParams.set(filterField, value);
-    if (searchParams.get('page')) searchParams.set('page', 1);
+    if (searchParams.get('page')) searchParams.set('page', 1); // when we are on last page and filter by unconfirmed than there will be no data for 3 pages and it would throw an error therefore we set to page 1 to request data for page one and not page 3 in case of filtering
+
     setSearchParams(searchParams); // set filterField, options to url like ?discount=with-discount
   }
 

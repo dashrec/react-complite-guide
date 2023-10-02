@@ -2,7 +2,7 @@ import { useSearchParams } from 'react-router-dom';
 import Select from './Select';
 
 // reusable SortBy Component
-function SortBy({ options }) {
+function SortBy({ options, id }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const sortBy = searchParams.get('sortBy') || ''; // default value empty string to preventing of being null
 
@@ -13,6 +13,7 @@ function SortBy({ options }) {
 
   return (
     <Select
+      id={id}
       options={options}
       type="white"
       value={sortBy}

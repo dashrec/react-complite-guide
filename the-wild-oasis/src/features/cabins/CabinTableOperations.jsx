@@ -16,6 +16,7 @@ function CabinTableOperations() {
       />
 
       <SortBy
+        id="sortCabins"
         options={[
           { value: 'name-asc', label: 'Sort by name (A-Z)' },
           { value: 'name-desc', label: 'Sort by name (Z-A)' },

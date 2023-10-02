@@ -35,7 +35,7 @@ export async function getBookings({ filter, sortBy, page }) {
   }
   return { data, count };
 }
-
+// get * about booking + cabins + guests foreign tables
 export async function getBooking(id) {
   const { data, error } = await supabase
     .from('bookings')
@@ -117,7 +117,7 @@ export async function updateBooking(id, obj) {
     console.error(error);
     throw new Error('Booking could not be updated');
   }
-  return data;
+  return data; // this data is returned from the mutation function which will than become data on onSuccess handler inside useChecking hook
 }
 
 export async function deleteBooking(id) {
