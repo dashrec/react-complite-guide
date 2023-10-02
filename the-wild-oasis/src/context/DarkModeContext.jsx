@@ -2,14 +2,15 @@ import { createContext, useContext, useEffect } from 'react';
 import { useLocalStorageState } from '../hooks/useLocalStorageState';
 
 const DarkModeContext = createContext();
-
+// children will be the whole App wrapped inside DarkModeProvider
 function DarkModeProvider({ children }) {
   const [isDarkMode, setIsDarkMode] = useLocalStorageState(
     window.matchMedia('(prefers-color-scheme: dark)').matches,
     'isDarkMode'
-  );
+  ); //isDarkMode is a name of the key in local storage
 
   useEffect(
+    // change class="dark-mode" || "light-mode" of html document
     function () {
       if (isDarkMode) {
         document.documentElement.classList.add('dark-mode');
@@ -32,11 +33,11 @@ function DarkModeProvider({ children }) {
     </DarkModeContext.Provider>
   );
 }
-
+// create custom hook
 function useDarkMode() {
   const context = useContext(DarkModeContext);
   if (context === undefined)
-    throw new Error('DarkModeContext was used outside of DarkModeProvider');
+    throw new Error('DarkModeContext was used outside of DarkModeProvider'); // in case we use it outside of the area which will not be wrapped inside DarkModeProvider
   return context;
 }
 
