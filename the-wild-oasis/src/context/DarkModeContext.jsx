@@ -5,7 +5,7 @@ const DarkModeContext = createContext();
 // children will be the whole App wrapped inside DarkModeProvider
 function DarkModeProvider({ children }) {
   const [isDarkMode, setIsDarkMode] = useLocalStorageState(
-    window.matchMedia('(prefers-color-scheme: dark)').matches,
+    window.matchMedia('(prefers-color-scheme: dark)').matches, // sets layout mode in accordance of operation system layout mode of the user meaning if he/she uses dark mode when they visit to page for the first time the mode will also be dark mode
     'isDarkMode'
   ); //isDarkMode is a name of the key in local storage
 

@@ -7,6 +7,7 @@ import { subtractDates } from '../utils/helpers';
 import { bookings } from './data-bookings';
 import { cabins } from './data-cabins';
 import { guests } from './data-guests';
+import Spinner from '../ui/Spinner';
 
 // const originalSettings = {
 //   minBookingLength: 3,
@@ -103,6 +104,7 @@ async function createBookings() {
 function Uploader() {
   const [isLoading, setIsLoading] = useState(false);
 
+  if (isLoading) return <Spinner />;
   async function uploadAll() {
     setIsLoading(true);
     // Bookings need to be deleted FIRST

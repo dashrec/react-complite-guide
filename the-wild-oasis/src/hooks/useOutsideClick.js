@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+// listening in the capturing phase, which is where the event goes from the DOM onto the target element,
 export function useOutsideClick(handler, listenCapturing = true) {
   const ref = useRef();
   useEffect(
