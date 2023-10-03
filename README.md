@@ -4,10 +4,13 @@ This Repo Contains 17 Projects, starting From small and simple App to big and ad
 
 Included:
 
+- React Hooks
+- reusable Components in react
 - react query
 - redux
 - context api
 - supabase
 - variety of third party libraries
 - variety of style technologies
+- vite projects
 - and much more
