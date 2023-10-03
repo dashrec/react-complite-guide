@@ -13,4 +13,4 @@ Included:
 - variety of third party libraries
 - variety of style technologies
 - vite projects
-- and much more
+- and many more
